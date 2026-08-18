@@ -475,7 +475,9 @@ class ModelInference:
             text = ""
         reason = ""
         if not text:
-            block = getattr(getattr(response, "prompt_feedback", None), "block_reason", None)
+            block = getattr(
+                getattr(response, "prompt_feedback", None), "block_reason", None
+            )
             if block:
                 reason = f"blocked={block}"
             elif getattr(response, "candidates", None):
